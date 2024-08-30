@@ -43,6 +43,6 @@ class Curso(models.Model):
     )
     estudiante=models.ForeignKey(
         Estudiante,
-        related_name='curso',
+        related_name='cursos',
         on_delete=models.RESTRICT
     )
