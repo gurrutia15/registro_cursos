@@ -17,7 +17,8 @@ class Direccion(models.Model):
     numero= models.CharField(max_length=10, null=False)
     # Se omitió el campo depto
     comuna=models.CharField(max_length=50, null=False)
-    # Se omitió el campo región
+    # Se omitió el campo ciudad
+    region = models.CharField(max_length=50, null=False)
     estudiante=models.OneToOneField(
         Estudiante,
         related_name='direccion',
@@ -44,5 +45,6 @@ class Curso(models.Model):
     estudiante=models.ForeignKey(
         Estudiante,
         related_name='cursos',
-        on_delete=models.RESTRICT
+        on_delete=models.RESTRICT,
+        null= True
     )
